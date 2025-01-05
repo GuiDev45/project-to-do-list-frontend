@@ -1,10 +1,4 @@
-interface TaskItemProps {
-  id: string;
-  title: string;
-  completed: boolean;
-  onToggleComplete: (id: string) => void;
-  onDelete: (id: string) => void;
-}
+import { TaskItemType } from "../../models/TaskItemType";
 
 export default function TaskItem({
   id,
@@ -12,7 +6,7 @@ export default function TaskItem({
   completed,
   onToggleComplete,
   onDelete,
-}: TaskItemProps) {
+}: TaskItemType) {
   return (
     <div>
       <input
