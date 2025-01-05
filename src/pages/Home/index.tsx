@@ -3,11 +3,11 @@ import Header from "../../components/Header";
 import FormCustom from "../../components/FormCustom";
 import TaskList from "../../components/TaskList";
 
-interface Task {
+type Task = {
   id: string;
   title: string;
   completed: boolean;
-}
+};
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);

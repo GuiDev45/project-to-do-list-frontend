@@ -1,18 +1,9 @@
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { taskSchema, TaskFormData } from "../../schemas";
+import { FormType } from "../../models/FormType";
 
-const taskSchema = z.object({
-  title: z.string().min(1, "O título é obrigatório"),
-});
-
-type TaskFormData = z.infer<typeof taskSchema>;
-
-interface FormProps {
-  onSubmit: (data: TaskFormData) => void;
-}
-
-export default function FormCustom({ onSubmit }: FormProps) {
+export default function FormCustom({ onSubmit }: FormType) {
   const {
     register,
     handleSubmit,
