@@ -1,7 +1,7 @@
 export type TaskItemType = {
   id: string;
-  title: string;
-  completed: boolean;
+  text: string;
+  status: boolean;
   onToggleComplete: (id: string) => void;
   onDelete: (id: string) => void;
 };

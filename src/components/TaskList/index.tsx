@@ -12,8 +12,8 @@ export default function TaskList({
         <TaskItem
           key={task.id}
           id={task.id}
-          title={task.title}
-          completed={task.completed}
+          text={task.text}
+          status={task.status}
           onToggleComplete={onToggleComplete}
           onDelete={onDelete}
         />

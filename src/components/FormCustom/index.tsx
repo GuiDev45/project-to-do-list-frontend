@@ -14,8 +14,8 @@ export default function FormCustom({ onSubmit }: FormType) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("title")} placeholder="Título da tarefa" />
-      {errors.title && <span>{errors.title.message}</span>}
+      <input {...register("text")} placeholder="Título da tarefa" />
+      {errors.text && <span>{errors.text.message}</span>}
       <button type="submit">Adicionar Tarefa</button>
     </form>
   );
