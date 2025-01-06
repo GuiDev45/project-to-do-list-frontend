@@ -2,8 +2,8 @@ import { TaskItemType } from "../../models/TaskItemType";
 
 export default function TaskItem({
   id,
-  title,
-  completed,
+  text,
+  status,
   onToggleComplete,
   onDelete,
 }: TaskItemType) {
@@ -11,10 +11,10 @@ export default function TaskItem({
     <div>
       <input
         type="checkbox"
-        checked={completed}
+        checked={status}
         onChange={() => onToggleComplete(id)}
       />
-      <span>{title}</span>
+      <span>{text}</span>
       <button onClick={() => onDelete(id)}>Excluir</button>
     </div>
   );

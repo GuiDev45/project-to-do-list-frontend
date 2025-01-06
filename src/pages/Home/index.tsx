@@ -2,27 +2,22 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import FormCustom from "../../components/FormCustom";
 import TaskList from "../../components/TaskList";
-
-type Task = {
-  id: string;
-  title: string;
-  completed: boolean;
-};
+import { TaskType } from "../../models/TaskType";
 
 export default function Home() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<TaskType[]>([]);
 
-  const addTask = (task: { title: string }) => {
+  const addTask = (task: { text: string }) => {
     setTasks([
       ...tasks,
-      { id: crypto.randomUUID(), title: task.title, completed: false },
+      { id: crypto.randomUUID(), text: task.text, status: false },
     ]);
   };
 
   const toggleComplete = (id: string) => {
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task,
+        task.id === id ? { ...task, status: !task.status } : task,
       ),
     );
   };
